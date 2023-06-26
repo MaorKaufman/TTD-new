@@ -9,7 +9,7 @@ def intro():
 def get_counts(): 
     if demo_name == "Get Counts":
         st.subheader("Get segment count API")
-        segID = st.text_input("Please insert SegmentID: ")
+        segID1 = st.text_input("Please insert SegmentID: ")
         auth = get_authentication_token()
         
         if auth is not None:
@@ -20,7 +20,7 @@ def get_counts():
             }
             data = {
                 "ProviderId": "startapp",
-                "ProviderElementId": segID,
+                "ProviderElementId": segID1,
                 "IncludeActiveIDsCountExpandedFlag": "true",
                 "PageStartIndex": "0",
                 "PageSize": "100"
@@ -40,7 +40,7 @@ def get_counts():
 def update_segment_name():
     if demo_name == "Update segment name":
         st.subheader("Update segment name and/or description API")
-        segID = st.text_input("Please insert SegmentID: ")
+        segID2 = st.text_input("Please insert SegmentID: ")
         newSegName = st.text_input("Please insert the new segment name: ")
         newDescription = st.text_input("Please insert the new description: ")
         
@@ -54,14 +54,14 @@ def update_segment_name():
             }
             payload = {
                 "ProviderId": "startapp",
-                "ProviderElementId": segID,
+                "ProviderElementId": segID2,
                 "ParentElementId": "customstartapp",
                 "DisplayName": newSegName,
                 "Buyable": 1,
                 "Description": newDescription
             }
             
-            if newSegName != "" and newDescription != "" and segID != "":
+            if newSegName != "" and newDescription != "" and segID2 != "":
                 response = requests.put(url=API_URL, headers=headers, json=payload)
                 
                 if response.status_code >= 200 and response.status_code < 300:
@@ -81,7 +81,7 @@ def update_partnerID_CPM_POM():
     if demo_name == "Update partnerID or CPM/POM":
         st.subheader("Update partnerID/CPM/POM tool")
        #  st.write("Please fill all the details")
-        segID = st.text_input("Please insert SegmentID: ")
+        segID3 = st.text_input("Please insert SegmentID: ")
         PartnerID = st.text_input("Please insert PartnerID: ")
         CappedCPM = st.text_input("Please insert Capped CPM: ")
         POM = st.text_input("Please insert percentage of media: ")
