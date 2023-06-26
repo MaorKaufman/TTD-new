@@ -4,8 +4,9 @@ import json
 
 def intro():
     pass
-
-def get_counts():
+#-------------------------------Drop down options-----------------------------------
+###------------------------------Get counts func------------------------------------
+def get_counts(): 
     if demo_name == "Get Counts":
         st.subheader("Get segment count API")
         segID = st.text_input("Please insert SegmentID: ")
@@ -35,7 +36,7 @@ def get_counts():
             st.write("Error: Could not retrieve Token from TTD.")
     else:
         clear_inputs()
-
+###------------------------------Update segment name------------------------------------
 def update_segment_name():
     if demo_name == "Update segment name":
         st.subheader("Update segment name and/or description API")
@@ -75,7 +76,7 @@ def update_segment_name():
             st.write("Error: Could not retrieve Token from TTD.")
     else:
         clear_inputs()
-        
+###------------------------------Update partnerID/CPM/POM------------------------------------        
 def update_partnerID_CPM_POM():
     if demo_name == "Update partnerID or CPM/POM":
         st.subheader("Update partnerID/CPM/POM tool")
@@ -85,7 +86,7 @@ def update_partnerID_CPM_POM():
         CappedCPM = st.text_input("Please insert Capped CPM: ")
         POM = st.text_input("Please insert percentage of media: ")
         
-
+###------------------------------get token------------------------------------        
 def get_authentication_token():
     API_URL = "https://api.thetradedesk.com/v3/authentication"
     data = {
@@ -102,12 +103,12 @@ def get_authentication_token():
         return data['Token']
     else:
         return None
-
+###------------------------------clear------------------------------------        
 def clear_inputs():
     st.text_input("Please insert SegmentID: ", value="")
     st.text_input("Please insert the new segment name: ", value="")
     st.text_input("Please insert the new description: ", value="")
-
+#####------------------------------clear------------------------------------        
 page_names_to_funcs = {
     "—": intro,
     "Get Counts": get_counts,
