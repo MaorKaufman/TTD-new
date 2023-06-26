@@ -79,7 +79,7 @@ def update_segment_name():
 def update_partnerID_CPM_POM():
     if demo_name == "Update partnerID or CPM/POM":
         st.subheader("Update partnerID/CPM/POM tool")
-         st.write("Please fill all the details")
+       #  st.write("Please fill all the details")
         segID = st.text_input("Please insert SegmentID: ")
         PartnerID= st.text_input("Please insert PartnerID: ")
         CappedCPM= st.float_input("Please insert Capped CPM: ")
