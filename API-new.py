@@ -82,8 +82,8 @@ def update_partnerID_CPM_POM():
        #  st.write("Please fill all the details")
         segID = st.text_input("Please insert SegmentID: ")
         PartnerID= st.text_input("Please insert PartnerID: ")
-        CappedCPM= float_input("Please insert Capped CPM: ")
-        PercentageOfMedia= float_input("Please insert Capped CPM: ")
+        CappedCPM= input("Please insert Capped CPM: ")
+        PercentageOfMedia= input("Please insert Capped CPM: ")
         
 
 def get_authentication_token():
