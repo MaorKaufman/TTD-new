@@ -85,6 +85,7 @@ def update_partnerID_CPM_POM():
         PartnerID = st.text_input("Please insert PartnerID: ")
         CappedCPM = st.text_input("Please insert Capped CPM: ")
         POM = st.text_input("Please insert percentage of media: ")
+        Activator_email = st.text_input("Please insert the activator Email address: ")
         
 ###------------------------------get token------------------------------------        
 def get_authentication_token():
