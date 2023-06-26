@@ -75,6 +75,16 @@ def update_segment_name():
             st.write("Error: Could not retrieve Token from TTD.")
     else:
         clear_inputs()
+        
+def update_partnerID_CPM_POM():
+    if demo_name == "Update partnerID or CPM/POM":
+        st.subheader("Update partnerID/CPM/POM tool")
+         st.write("Please fill all the details")
+        segID = st.text_input("Please insert SegmentID: ")
+        PartnerID= st.text_input("Please insert PartnerID: ")
+        CappedCPM= st.float_input("Please insert Capped CPM: ")
+        Percentage of media= st.float_input("Please insert Capped CPM: ")
+        
 
 def get_authentication_token():
     API_URL = "https://api.thetradedesk.com/v3/authentication"
@@ -101,7 +111,8 @@ def clear_inputs():
 page_names_to_funcs = {
     "—": intro,
     "Get Counts": get_counts,
-    "Update segment name": update_segment_name
+    "Update segment name": update_segment_name,
+    "Update partnerID or CPM/POM" : update_partnerID_CPM_POM
 }
 
 st.sidebar.title("Welcome to Start.io's TTD's UI tool")
